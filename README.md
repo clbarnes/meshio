@@ -3,6 +3,7 @@
   <p align="center">I/O for mesh files.</p>
 </p>
 
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/meshio.svg?style=flat-square)](https://pypi.org/project/meshio)
 [![CircleCI](https://img.shields.io/circleci/project/github/nschloe/meshio/master.svg?style=flat-square)](https://circleci.com/gh/nschloe/meshio/tree/master)
 [![codecov](https://img.shields.io/codecov/c/github/nschloe/meshio.svg?style=flat-square)](https://codecov.io/gh/nschloe/meshio)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg?style=flat-square)](https://github.com/psf/black)

@@ -1,12 +1,20 @@
+import itertools
 import os
+import runpy
 
 from setuptools import find_packages, setup
 
 # https://packaging.python.org/single_source_version/
 base_dir = os.path.abspath(os.path.dirname(__file__))
-about = {}
-with open(os.path.join(base_dir, "meshio", "__about__.py"), "rb") as f:
-    exec(f.read(), about)
+about = runpy.run_path(os.path.join(base_dir, "meshio", "__about__.py"))
+
+extras = {
+    "exodus": ["netCDF4"],
+    "hdf5": ["h5py"],  # MED, MOAB, XDMF formats
+    "xml": ["lxml"],  # Dolfin, VTU, XDMF, SVG
+}
+
+extras["all"] = list(itertools.chain.from_iterable(extras.values()))
 
 
 setup(
@@ -39,7 +47,13 @@ setup(
         "Intended Audience :: Science/Research",
         "Operating System :: OS Independent",
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.5",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
         "Topic :: Scientific/Engineering",
     ],
     entry_points={
