@@ -20,6 +20,7 @@ virtualenv:
 addons:
   apt:
     packages:
+      - libhdf5-dev
       - python-h5py
       - python3-h5py
       - python-numpy
